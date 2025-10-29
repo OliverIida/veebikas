@@ -29,7 +29,7 @@ body {
 }
 
 /* Vastuste nuppude konteiner */
-#answer-buttons {
+#answerButtons {
     display: flex;
     flex-direction: column;
     gap: 0.75rem; /* Vahe nuppude vahel */

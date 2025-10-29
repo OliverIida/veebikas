@@ -1,163 +1,190 @@
-// --- 1. KÜSIMUSTE ANDMEBAAS ---
-// Lisage siia nii palju küsimusi kui soovite.
-// Igal küsimusel peab olema 'question' (tekst) ja 'answers' (massiiv).
-// Vastuste massiivis peab igal vastusel olema 'text' ja 'correct' (true/false).
+//html faili ei saa vst commente panna seega
+//kui sa soovid html faili kuvada, siis leia see üles file exploreris ja "open with" ning vali brauser, millega seda avada.
+//kui sa proovid js failist vigu otsida siis console.log(); aitab
+
+// Siin on küsimuste loetelu
 const questions = [
     {
-        question: "Mis on Eesti pealinn?",
+        question: "Iterative maps",
         answers: [
-            { text: "Tartu", correct: false },
-            { text: "Tallinn", correct: true },
-            { text: "Pärnu", correct: false },
-            { text: "Narva", correct: false }
+            { text: "1", correct: "" },
+            { text: "2", correct: true },
+            { text: "3", correct: "" },
+            { text: "4", correct: "" }
         ]
     },
     {
-        question: "Mis aastal Eesti taasiseseisvus?",
+        question: "Turing machine?",
         answers: [
-            { text: "1989", correct: false },
-            { text: "1990", correct: false },
+            { text: "1989", correct: "" },
+            { text: "1990", correct: "" },
             { text: "1991", correct: true },
-            { text: "1992", correct: false }
+            { text: "1992", correct: "" }
         ]
     },
     {
-        question: "Mis on Eesti kõrgeim tipp?",
+        question: "hypothalamus to cortext data biased learning when sleeping?",
         answers: [
-            { text: "Munamägi", correct: false },
+            { text: "Munamägi", correct: "" },
             { text: "Suur Munamägi", correct: true },
-            { text: "Vallamägi", correct: false },
-            { text: "Emumägi", correct: false }
+            { text: "Vallamägi", correct: "" },
+            { text: "Emumägi", correct: "" }
         ]
     },
     {
-        question: "Mitu värvi on Eesti lipul?",
+        question: "Reaalarvude suurus, pole järjestatav?",
         answers: [
-            { text: "Kaks", correct: false },
+            { text: "Munamägi", correct: "" },
+            { text: "Suur Munamägi", correct: true },
+            { text: "Vallamägi", correct: "" },
+            { text: "Emumägi", correct: "" }
+        ]
+    },
+    {
+        question: "Realarvud, Cauchy sequences",
+        answers: [
+            { text: "Munamägi", correct: "" },
+            { text: "Suur Munamägi", correct: true },
+            { text: "Vallamägi", correct: "" },
+            { text: "Emumägi", correct: "" }
+        ]
+    },
+    {
+        question: "Kui su input biti stringi pikkus on n siis mitu erinevat binaarset funktsiooni leidub sellele bit stringile?",
+        answers: [
+            { text: "Munamägi", correct: "" },
+            { text: "Suur Munamägi", correct: true },
+            { text: "Vallamägi", correct: "" },
+            { text: "Emumägi", correct: "" }
+        ]
+    },
+    {
+        question: "Midagi maatriksite kohta",
+        answers: [
+            { text: "Munamägi", correct: "" },
+            { text: "Suur Munamägi", correct: true },
+            { text: "Vallamägi", correct: "" },
+            { text: "Emumägi", correct: "" }
+        ]
+    },
+    {
+        question: "On rohkem tõeseid fakte kui tõestatavaid fakte",
+        answers: [
+            { text: "Munamägi", correct: "" },
+            { text: "Suur Munamägi", correct: true },
+            { text: "Vallamägi", correct: "" },
+            { text: "Emumägi", correct: "" }
+        ]
+    },
+    {
+        question: "4 värvi teoreem, tõeastati puhtalt arvutiga",
+        answers: [
+            { text: "Munamägi", correct: "" },
+            { text: "Suur Munamägi", correct: true },
+            { text: "Vallamägi", correct: "" },
+            { text: "Emumägi", correct: "" }
+        ]
+    },
+    {
+        question: "Tõesta Riemann hypothesis",
+        answers: [
+            { text: "Kaks", correct: "" },
             { text: "Kolm", correct: true },
-            { text: "Neli", correct: false }
+            { text: "Neli", correct: "" }
         ]
     }
 ];
 
-// --- 2. HTML ELEMENTIDE VIITED ---
-// Loome muutujad, et saaksime HTML elemente koodis kasutada.
+//need muutujad on viidad html faili elementidele 
 const questionElement = document.getElementById("question");
-const answerButtonsElement = document.getElementById("answer-buttons");
+const answerButtonsElement = document.getElementById("answerButtons");
 const nextButton = document.getElementById("next-btn");
 const quizElement = document.getElementById("quiz");
-const resultsElement = document.getElementById("results");
-const scoreTextElement = document.getElementById("score-text");
+const endElement = document.getElementById("end");
 const retryButton = document.getElementById("retry-btn");
 
-// --- 3. VIKTORIINI OLEKUMUUTUJAD ---
-// Hoiame meeles, millise küsimuse juures oleme ja mis on skoor.
+// muutuja, mis hoiab meeles mitmenda küsimuse juures oleme
 let currentQuestionIndex = 0;
-let score = 0;
 
-// --- 4. PÕHIFUNKTSIOONID ---
 
-/**
- * Käivitab viktoriini algusest peale.
- */
+//Käivitab viktoriini uuesti
 function startQuiz() {
     currentQuestionIndex = 0;
-    score = 0;
-    nextButton.innerHTML = "Järgmine"; // Nupu tekst tagasi "Järgmine"
-    
-    // Peida tulemused ja näita viktoriini
-    resultsElement.classList.add("hidden");
+ 
+    // muudab klasse nii et küsimusi oleks näha ja tulemust mitte
+    endElement.classList.add("hidden");
     quizElement.classList.remove("hidden");
     
     showQuestion();
 }
 
-/**
- * Kustutab vanad vastused ja kuvab praeguse küsimuse.
- */
-function showQuestion() {
-    resetState(); // Kustutab eelmise küsimuse nupud
 
-    // Võta praegune küsimus andmebaasist
+//Kustutab vana küsimuse ja vastused. Kuvab praeguse küsimuse ja vastused
+function showQuestion() {
+
+    // Võtab praeguse küsimuse andmebaasist
     let currentQuestion = questions[currentQuestionIndex];
     
-    // Määra küsimuse tekst HTML elemendile
+    // Määrab küsimuse teksti HTML elemendile
+    //${} on muutuja, mis tehakse stringiks
+    //see on kujul "number. küsimus"
     questionElement.innerHTML = `${currentQuestionIndex + 1}. ${currentQuestion.question}`;
 
-    // Loo iga vastusevariandi jaoks nupp
-    currentQuestion.answers.forEach(answer => {
+    //tühjendab vastuste elemendi
+    answerButtonsElement.replaceChildren();
+
+    //Loo iga vastusevariandi jaoks nupp
+    //for loop iga vastusega (vastus on kujul {text: "tekst", correct: true})
+    currentQuestion.answers.forEach(vastus => {
+        //loob uue <button> elemendi
         const button = document.createElement("button");
-        button.innerHTML = answer.text;
-        button.classList.add("btn"); // Lisa CSS klass
+
+        //määrab <button> tekstiks vastuse teksti
+        button.innerHTML = vastus.text;
+
+        //määrab css stiili
+        button.classList.add("btn");
         
-        // Salvesta nupu sisse info, kas see on õige vastus
-        if (answer.correct) {
-            button.dataset.correct = "true";
-        }
+        // Salvestab nupu sisse info, kas see vastus on tõene
+        //data atribuut saab salvestada ainult stringe, see on miks false asemel on ""
+        button.dataset.correct = vastus.correct;
         
-        // Lisa nupule klikkimise sündmus
+        // Lisab nupule klikkimise selectAnswer sündmuse, kui sa klikid nuppu siis aktiveerub selectAnswer funktsioon
         button.addEventListener("click", selectAnswer);
         
-        // Lisa nupp vastuste konteinerisse
+        // Lisab nupu vastuste elementi
         answerButtonsElement.appendChild(button);
     });
 }
 
-/**
- * Puhastab eelmise küsimuse oleku (peidab "Järgmine" nupu ja eemaldab vanad vastused).
- */
-function resetState() {
-    nextButton.classList.add("hidden"); // Peida "Järgmine" nupp
-    while (answerButtonsElement.firstChild) {
-        answerButtonsElement.removeChild(answerButtonsElement.firstChild);
-    }
-}
 
-/**
- * Käivitub, kui kasutaja vajutab vastuse nupule.
- * @param {Event} e Klikkimise sündmus
- */
-function selectAnswer(e) {
-    const selectedButton = e.target;
-    const isCorrect = selectedButton.dataset.correct === "true";
-
-    // Kontrolli, kas vastus oli õige
-    if (isCorrect) {
+//Käivitub, kui kasutaja vajutab vastuse nupule.
+function selectAnswer(event) {
+    //see on viit sellele nupule mida vajutati
+    const selectedButton = event.target;
+    
+    // Kontrolli, kas vastus oli õige ja muuda nupu värv vastavalt
+    if (selectedButton.dataset.correct) {
         selectedButton.classList.add("correct"); // Muuda nupp roheliseks
-        score++; // Suurenda skoori
     } else {
         selectedButton.classList.add("incorrect"); // Muuda nupp punaseks
     }
 
-    // Muuda kõik nupud mitteaktiivseks ja näita õiget vastust
+    // Muuda kõik nupud mitteaktiivseks ja muuda õige vastuse nupu värv roheliseks
     Array.from(answerButtonsElement.children).forEach(button => {
-        if (button.dataset.correct === "true") {
-            button.classList.add("correct"); // Näita alati õiget vastust
+        
+        if (button.dataset.correct) {
+            button.classList.add("correct"); //õige nupu värv roheliseks
         }
-        button.disabled = true; // Keela nupud
+        button.disabled = true; //"invaliidistab" (disables) nupu et seda ei saaks teist korda vajutada
+        
     });
-
-    // Näita "Järgmine" nuppu
-    nextButton.classList.remove("hidden");
 }
 
-/**
- * Kuvab lõpptulemuse.
- */
-function showResults() {
-    // Peida viktoriin ja näita tulemusi
-    quizElement.classList.add("hidden");
-    resultsElement.classList.remove("hidden");
 
-    // Kuva skoor
-    scoreTextElement.innerHTML = `Sinu tulemus on ${score} punkti ${questions.length}-st!`;
-}
-
-/**
- * Otsustab, kas näidata järgmist küsimust või lõpptulemust.
- */
+//Otsustab, kas näidata järgmist küsimust või lõpptulemust.
 function handleNextButton() {
-    currentQuestionIndex++; // Liigu järgmise küsimuse indeksi juurde
+    currentQuestionIndex++; //suurendab indeksit ühe võrra
     
     if (currentQuestionIndex < questions.length) {
         // Kui küsimusi on veel, näita järgmist
@@ -168,21 +195,12 @@ function handleNextButton() {
     }
 }
 
-// --- 5. SÜNDMUSTE KUULAJAD ---
 
-// Mida teha, kui vajutatakse "Järgmine" nuppu
-nextButton.addEventListener("click", () => {
-    if (currentQuestionIndex < questions.length) {
-        handleNextButton();
-    } else {
-        // Kui viktoriin on juba läbi, siis see nupp käivitab uuesti
-        startQuiz();
-    }
-});
+// Peidab küsimused ja kuvab lõpusõna
+function showResults() {
+    quizElement.classList.add("hidden");
+    endElement.classList.remove("hidden");
+}
 
-// Mida teha, kui vajutatakse "Proovi uuesti" nuppu
-retryButton.addEventListener("click", startQuiz);
-
-// --- 6. KÄIVITAMINE ---
-// Alusta viktoriiniga kohe, kui leht laeb
+//Alustab viktoriiniga kohe, kui leht laeb
 startQuiz();
