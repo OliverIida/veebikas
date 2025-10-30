@@ -1,6 +1,4 @@
-//html faili ei saa vst commente panna seega
-//kui sa soovid html faili kuvada, siis leia see üles file exploreris ja "open with" ning vali brauser, millega seda avada.
-//kui sa proovid js failist vigu otsida siis console.log(); aitab
+//algne kood, mida ma oma mõistusega muutma hakkasin pärines Gemini tehisarult
 
 // Siin on küsimuste loetelu
 const questions = [
