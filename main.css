@@ -10,32 +10,6 @@ body {
     margin: 0;
 }
 
-/* Viktoriini konteiner */
-.quiz-container {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 600px;
-    padding: 2rem;
-    box-sizing: border-box; /* Kindlustab, et padding ei muuda laiust */
-}
-
-/* Küsimuse teksti stiil */
-#question {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    color: #1a1a1a;
-}
-
-/* Vastuste nuppude konteiner */
-#answerButtons {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem; /* Vahe nuppude vahel */
-}
-
-/* Üldine nupu stiil */
 .btn {
     width: 100%;
     padding: 1rem;
@@ -54,43 +28,32 @@ body {
     border-color: #adb5bd;
 }
 
-/* Nupud, kui need on valitud */
-.btn.correct {
-    background-color: #28a745;
-    color: white;
-    border-color: #28a745;
+.container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    padding: 2rem;
+    box-sizing: border-box; /* Kindlustab, et padding ei muuda laiust */
 }
 
-.btn.incorrect {
-    background-color: #dc3545;
-    color: white;
-    border-color: #dc3545;
+.vasak_karp {
+  position: fixed;
+  bottom: 0px;       
+  left: 300px;         
+  width: 300px;
+  height: 821px;
+  background-color: #588B8B;
 }
 
-/* Keelatud nuppude stiil (pärast vastamist) */
-.btn:disabled {
-    cursor: not-allowed;
-    opacity: 0.7;
-}
-
-/* Järgmine/Proovi uuesti nupu stiil */
-#next-btn, #retry-btn {
-    display: block;
-    width: 100%;
-    background-color: #007bff;
-    color: white;
-    font-weight: bold;
-    border: none;
-    padding: 1rem;
-    margin-top: 1.5rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.2s;
-}
-
-#next-btn:hover, #retry-btn:hover {
-    background-color: #0056b3;
+.parem_karp {
+  position: fixed;
+  top: 0px;       
+  right: 380px;         
+  width: 330px;
+  height: 451px;
+  background-color: #C8553D;
 }
 
 /* Peidetud elementide klass */

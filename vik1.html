@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <title>Viktoriin I</title>
+    <title>Mandlebrot set</title>
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="vik1.css">
 </head>
 
 <body>
-    <div class="quiz-container">
+    <div id="kala"></div>
+    <div class="vasak_karp"></div>
+    <div class="parem_karp"></div>
+    <div id="pilt"></div>
+    <div class="container">
         <div id="quiz">
             <h2 id="question">Kuskil on kala...</h2>
             <div id="answerButtons"></div>
-            <button id="next-btn"  onclick="handleNextButton()">Järgmine</button>
+            <button id="järgmine"  onclick="handleNextButton()">Järgmine</button>
         </div>
 
         <div id="end" class="hidden">

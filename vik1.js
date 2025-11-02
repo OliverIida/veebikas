@@ -1,105 +1,125 @@
-//algne kood, mida ma oma mõistusega muutma hakkasin pärines Gemini tehisarult
+//algne kood pärines tehisarult
+
 
 // Siin on küsimuste loetelu
 const questions = [
     {
-        question: "Iterative maps",
+        question: "Mis on rekurentsete jadade kontekstis püsipunkt?",
         answers: [
             { text: "1", correct: "" },
-            { text: "2", correct: true },
-            { text: "3", correct: "" },
-            { text: "4", correct: "" }
+            { text: "1", correct: "" },
+            { text: "1", correct: true },
+            { text: "1", correct: "" }
         ]
     },
     {
-        question: "Turing machine?",
+        question: "Miks sellist kiirt jälgides jõutakse rekurentse jada püsipunkti(desse)?",
         answers: [
-            { text: "1989", correct: "" },
-            { text: "1990", correct: "" },
-            { text: "1991", correct: true },
-            { text: "1992", correct: "" }
+            { text: "Kuna kui funktsioon ei lõika y=x graafi, siis kiir ei jää vale vastuse taha kinni.", correct: "" },
+            { text: "Kuna kiire iga murdumine toimub sellel kõrgusel/kaugusel mis on järgmise liikme väärtus.", correct: true },
+            { text: "Kuna graafikul olev funktsioon on üksühene oma määramispiirkonnas ja ei teki olukorda, kus kaks kiirt satuvad samale rajale.", correct: "" },
+            { text: "Kuna selle funktsiooni pöördfunktsioon on see sama funktsioon ainult nihutatud, seega juhtus nii, et seda funktsiooni iseenda peal kuus korda rakendades muutub see funktsioon funktsiooniks y=x ehk f(f(f(f(f(f(x))))))=x ning see on miks vastu y=x funktsiooni peegeldades jõuab püsipunktini.", correct: "" }
         ]
     },
     {
-        question: "hypothalamus to cortext data biased learning when sleeping?",
+        question: "Mis on stabiilne püsipunkt?",
         answers: [
-            { text: "Munamägi", correct: "" },
-            { text: "Suur Munamägi", correct: true },
-            { text: "Vallamägi", correct: "" },
-            { text: "Emumägi", correct: "" }
+            { text: "1", correct: "" },
+            { text: "1", correct: true },
+            { text: "1", correct: "" },
+            { text: "1", correct: "" }
         ]
     },
     {
-        question: "Reaalarvude suurus, pole järjestatav?",
+        question: "Bifurkatsiooni diagramm",
         answers: [
-            { text: "Munamägi", correct: "" },
-            { text: "Suur Munamägi", correct: true },
-            { text: "Vallamägi", correct: "" },
-            { text: "Emumägi", correct: "" }
+            { text: "1", correct: "" },
+            { text: "1", correct: true },
+            { text: "1", correct: "" },
+            { text: "1", correct: "" }
         ]
     },
     {
-        question: "Realarvud, Cauchy sequences",
+        question: "Miks püsipunktide arv kasvab?",
         answers: [
-            { text: "Munamägi", correct: "" },
-            { text: "Suur Munamägi", correct: true },
-            { text: "Vallamägi", correct: "" },
-            { text: "Emumägi", correct: "" }
+            { text: "1", correct: "" },
+            { text: "1", correct: true },
+            { text: "1", correct: "" },
+            { text: "1", correct: "" }
         ]
     },
     {
-        question: "Kui su input biti stringi pikkus on n siis mitu erinevat binaarset funktsiooni leidub sellele bit stringile?",
+        question: "Mis on kompleks arv?",
         answers: [
-            { text: "Munamägi", correct: "" },
-            { text: "Suur Munamägi", correct: true },
-            { text: "Vallamägi", correct: "" },
-            { text: "Emumägi", correct: "" }
+            { text: "1", correct: "" },
+            { text: "1", correct: true },
+            { text: "1", correct: "" },
+            { text: "1", correct: "" }
         ]
     },
     {
-        question: "Midagi maatriksite kohta",
+        question: "Kuidas nad töötavad",
         answers: [
-            { text: "Munamägi", correct: "" },
-            { text: "Suur Munamägi", correct: true },
-            { text: "Vallamägi", correct: "" },
-            { text: "Emumägi", correct: "" }
+            { text: "1", correct: "" },
+            { text: "1", correct: true },
+            { text: "1", correct: "" },
+            { text: "1", correct: "" }
         ]
     },
     {
-        question: "On rohkem tõeseid fakte kui tõestatavaid fakte",
+        question: "change of variables",
         answers: [
-            { text: "Munamägi", correct: "" },
-            { text: "Suur Munamägi", correct: true },
-            { text: "Vallamägi", correct: "" },
-            { text: "Emumägi", correct: "" }
+            { text: "1", correct: "" },
+            { text: "1", correct: true },
+            { text: "1", correct: "" },
+            { text: "1", correct: "" }
         ]
     },
     {
-        question: "4 värvi teoreem, tõeastati puhtalt arvutiga",
+        question: "mandlebrot set I",
         answers: [
-            { text: "Munamägi", correct: "" },
-            { text: "Suur Munamägi", correct: true },
-            { text: "Vallamägi", correct: "" },
-            { text: "Emumägi", correct: "" }
+            { text: "1", correct: "" },
+            { text: "1", correct: true },
+            { text: "1", correct: "" },
+            { text: "1", correct: "" }
         ]
     },
     {
-        question: "Tõesta Riemann hypothesis",
+        question: "mandlebrot set II",
         answers: [
-            { text: "Kaks", correct: "" },
-            { text: "Kolm", correct: true },
-            { text: "Neli", correct: "" }
+            { text: "1", correct: "" },
+            { text: "1", correct: true },
+            { text: "1", correct: "" }
         ]
     }
 ];
 
+//siin on lisainfo võimalus. 
+//esimene lahter on 1 kui on tegu pildiga ja 0 kui tekstiga
+//teine lahter on vastavalt kas allikas või tekst
+//kolmas on info kasti kaugus vasakust seinast pikslites
+//neljas on kaugus põhjast
+//viies on laius pikslites
+//kuues on pikkus pikslites (tekstil ei ole pikkust)
+const Data = [
+    [],
+    [[1, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDwaUd677T_vbYjoh0Ks7enDDSZGWcEiHhrA&s", "160px", "300px", "600px", "400px"], [0, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "20px", "900px", "500px"],[1, "https://media.timeout.com/images/106006274/image.jpg", "1660px", "600px", "600px", "400px"]],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+];
+
 //need muutujad on viidad html faili elementidele 
+const piltElement = document.getElementById("pilt")
 const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answerButtons");
-const nextButton = document.getElementById("next-btn");
 const quizElement = document.getElementById("quiz");
 const endElement = document.getElementById("end");
-const retryButton = document.getElementById("retry-btn");
 
 // muutuja, mis hoiab meeles mitmenda küsimuse juures oleme
 let currentQuestionIndex = 0;
@@ -124,10 +144,57 @@ function showQuestion() {
     let currentQuestion = questions[currentQuestionIndex];
     
     // Määrab küsimuse teksti HTML elemendile
-    //${} on muutuja, mis tehakse stringiks
+    //${} on muutuja, mis tehakse stringiks 
     //see on kujul "number. küsimus"
     questionElement.innerHTML = `${currentQuestionIndex + 1}. ${currentQuestion.question}`;
 
+    
+    let currentData = Data[currentQuestionIndex]
+
+    piltElement.replaceChildren();
+
+    currentData.forEach(kastike => {
+        if(kastike[0]){
+            a = document.createElement("div")
+            a.style.backgroundColor = "#ffffff";
+            a.style.borderRadius = "10px";
+            a.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.1)";
+            a.style.position = "absolute";
+            a.style.left = kastike[2];
+            a.style.bottom = kastike[3];
+            a.style.padding = "2rem";
+            a.style.boxSizing = "border-box";
+
+            const kast = document.createElement("img");
+            kast.src = kastike[1];
+            kast.style.width = kastike[4];
+            kast.style.height = kastike[5]; 
+
+            a.appendChild(kast)
+            piltElement.appendChild(a);
+        }
+        else{
+            a = document.createElement("div")
+            a.style.backgroundColor = "#ffffff";
+            a.style.borderRadius = "10px";
+            a.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.1)";
+            a.style.position = "absolute";
+            a.style.left = kastike[2];
+            a.style.bottom = kastike[3];
+            a.style.width = kastike[4];
+            a.style.padding = "2rem";
+            a.style.boxSizing = "border-box";
+
+            const kast = document.createElement("div");
+            kast.innerHTML = kastike[1]; 
+            
+            a.appendChild(kast)
+            piltElement.appendChild(a);
+        };
+        
+        
+    });
+    
     //tühjendab vastuste elemendi
     answerButtonsElement.replaceChildren();
 
@@ -200,5 +267,5 @@ function showResults() {
     endElement.classList.remove("hidden");
 }
 
-//Alustab viktoriiniga kohe, kui leht laeb
+//Alustab viktoriiniga kohe, kui leht ära laeb
 startQuiz();
