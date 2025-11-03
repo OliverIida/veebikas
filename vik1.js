@@ -99,8 +99,8 @@ const questions = [
 //teine lahter on vastavalt kas allikas või tekst
 //kolmas on info kasti kaugus vasakust seinast pikslites
 //neljas on kaugus põhjast
-//viies on laius pikslites
-//kuues on pikkus pikslites (tekstil ei ole pikkust)
+//viies on laius protsentides
+//kuues on pikkus protsentides (tekstil ei ole pikkust)
 const Data = [
     [],
     [[1, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDwaUd677T_vbYjoh0Ks7enDDSZGWcEiHhrA&s", "10vw", "20vh", "20vw", "23vh"], [0, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "1vw", "70vh", "25vw"],[1, "https://media.timeout.com/images/106006274/image.jpg", "66vw", "45vh", "23vw", "33vh"]],
