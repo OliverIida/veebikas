@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Murphy seaduste viktoriin</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="vik2.css">
+</head>
+
+<body>
+    <div id="kala"></div>
+    <div class="vasak_karp"></div>
+    <div class="parem_karp"></div>
+    <div id="pilt"></div>
+    <div style="position: relative; z-index: 1000;" class="container">
+        <div id="quiz">
+            <h2 id="question">kala...?</h2>
+            <div id="answerButtons"></div>
+            <button id="järgmine"  onclick="handleNextButton()">Järgmine</button>
+        </div>
+
+        <div id="end" class="hidden">
+            <h3>Viktoriin on läbi!</h3>
+            <button id="retry-btn" onclick="startQuiz()">Proovi uuesti</button>
+        </div>
+    </div>
+    <script src="vik2.js"></script>
+</body>

@@ -1,0 +1,82 @@
+body {
+  /* Sets the image */
+  background-image: url("https://github.com/Kent-Clark-Valge/TU-stuff/blob/main/Untitled.png?raw=true");
+  /* Makes the image cover the entire element */
+  background-size: cover; /* width: auto, height: 100% */   
+  /* Centers the image */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vasak_karp {
+    position: fixed;
+    bottom: 36vh;       
+    left: 15vw;         
+    width: 15vw;
+    height: 100vh;
+    background-color: #ffd5c2;
+    z-index: -1;
+}
+
+.parem_karp {
+    position: fixed;
+    top: 40vh;       
+    right: 15vw;         
+    width: 15vw;
+    height: 100vh;
+    background-color: #C8553D;
+    z-index: -2;
+}
+
+/* Küsimuse teksti stiil */
+#question {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #1a1a1a;
+}
+
+/* Vastuste nuppude konteiner */
+#answerButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Nupud, kui need on valitud */
+.btn.correct {
+    background-color: #588B8B;
+    color: white;
+    border-color: #588B8B;
+}
+
+.btn.incorrect {
+    background-color: #dc3545;
+    color: white;
+    border-color: #dc3545;
+}
+
+/* Keelatud nuppude stiil (pärast vastamist) */
+.btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Järgmine/Proovi uuesti nupu stiil */
+#järgmine, #retry-btn {
+    display: block;
+    width: 100%;
+    background-color: #ffd5c2;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+#järgmine:hover, #retry-btn:hover {
+    background-color: #ffd5c2;  
+}
