@@ -9,10 +9,49 @@
 </head>
 
 <body>
-    <div class="topnav">
-        <a class="active" href="">PEALEHT</a>
-        <a href="viktoriinid.html">MÄNGUD</a>
-        <a href="tiimileht.html">TIIM</a>
-    </div
+    <header>
+    <h1>VIP VEEBILEHT</h1>
+  </header>
+
+  <div class="container">
+    <div class="card" onclick="goToPage('vik1.html')">Esimene viktoriinide</div>
+    <div class="card" onclick="goToPage('vik2.html')">Teine viktoriin</div>
+    <div class="card" onclick="goToPage('vik3.html')">Kolmas viktoriin</div>
+  </div>
+
+  <section class="tiimi-sektsion">
+    <h2>TIIM</h2>
+    <p>Meie tiim koosneb kolmest ägedast Tartu Ülikooli informaatika tudengist, 
+  kes panustasid veebilehe loomisesse erineval moel. 
+  Igaüks andis oma osa, et lõpptulemus oleks esteetiline, funktsionaalne ja hästi toimiv.</p>
+
+    <div class="tiim">
+      <div class="liige">
+        <img src="https://via.placeholder.com/200x200" alt="Liige 1">
+        <h3>Erik</h3>
+        <p>Tegi viktoriinide sisu ja küsimused</p>
+      </div>
+      <div class="liige">
+        <img src="https://via.placeholder.com/200x200" alt="Liige 2">
+        <h3>Kent Clark</h3>
+        <p>Tegi viktoriini loogika</p>
+      </div>
+      <div class="liige">
+        <img src="pildid/Oliver.jpg" alt="Liige 3">
+          <h3>Oliver</h3>
+        <p>Tegi pealehe kujunduse ja ülesehituse</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 VIP VEEBILEHT. Kõik õigused kaitstud.
+  </footer>
+
+  <script>
+    function goToPage(url) {
+      window.location.href = url;
+    }
+  </script>
 </body>
 </html>
