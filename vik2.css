@@ -78,10 +78,15 @@ body {
 }
 
 #järgmine:hover, #retry-btn:hover {
-    background-color: #ffd5c2;  
+    background-color: #f28f3b;  
+}
+
+#järgmine:not(:disabled) {
+    background-color: #f28f3b;
 }
 
 #järgmine:disabled {
+    background-color: #ffd5c2;
     cursor: not-allowed;
     opacity: 0.6;
 }
