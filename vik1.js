@@ -125,7 +125,7 @@ let currentQuestionIndex = 0;
 
 //Käivitab viktoriini uuesti
 function startQuiz() {
-    currentQuestionIndex = 4;
+    currentQuestionIndex = 0;
  
     // muudab klasse nii et küsimusi oleks näha ja tulemust mitte
     endElement.classList.add("hidden");
