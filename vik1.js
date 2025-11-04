@@ -6,10 +6,9 @@ const questions = [
     {
         question: "Mis on rekurentsete jadade kontekstis püsipunkt?",
         answers: [
-            { text: "1", correct: "" },
-            { text: "1", correct: "" },
-            { text: "1", correct: true },
-            { text: "1", correct: "" }
+            { text: "Püsipunkt on iga jada piirväärtus.", correct: "" },
+            { text: "Püsipunkt on punkt, mille puhul f(x) = x.", correct: "" },
+            { text: "Püsipunkt on punkt, mille puhul f^n(x)=x mingi naturaalarvu n puhul.", correct: true },
         ]
     },
     {
@@ -24,71 +23,69 @@ const questions = [
     {
         question: "Mis on stabiilne püsipunkt?",
         answers: [
-            { text: "1", correct: "" },
-            { text: "1", correct: true },
-            { text: "1", correct: "" },
-            { text: "1", correct: "" }
+            { text: "Stabiilne püsipunkt on püsipunkt mille puhul kõik võimalikud alguspunktid koonduvad sellesse püsipunkti.", correct: "" },
+            { text: "Püsipunkt (m,n) on stabiilne siis kui, leidub reaalarv r > 0 nii et rekurentsed jadad algusega hulgas {m-r,m+r} koonduvad püsipunkti.", correct: true },
+            { text: "Stabiilne püsipunkt on püsipunkt, millesse koondub rohkem kui üks rekurentne jada.", correct: "" },
+            { text: "Stabiilne püsipunkt on püsipunkt, mille puhul meie valitud potentsiaalse energia funktsioon on minimaalne.", correct: "" }
         ]
     },
     {
-        question: "Bifurkatsiooni diagramm",
+        question: "Mida võiks näidata bifurkatsiooni diagramm?",
         answers: [
-            { text: "1", correct: "" },
-            { text: "1", correct: true },
-            { text: "1", correct: "" },
-            { text: "1", correct: "" }
+            { text: "Funktsiooni püsipunkte sõltuvalt parameetrist.", correct: "" },
+            { text: "Funktsiooni stabiilseid püsipunkte sõlutvalt parameetrist.", correct: true },
+            { text: "Funktsiooni püsipunkte sõltuvalt funktsiooni muutujast.", correct: "" },
+            { text: "Funktsiooni stabiilseid püsipunkte sõltuvalt muutujast.", correct: "" }
         ]
     },
     {
         question: "Miks püsipunktide arv kasvab?",
         answers: [
-            { text: "1", correct: "" },
-            { text: "1", correct: true },
-            { text: "1", correct: "" },
-            { text: "1", correct: "" }
+            { text: "Kuna kui seda funktsiooni itereerida, siis funktsioon muutub loogelisemaks.", correct: "true" },
+            { text: "Kuna funktsiooni rx(1-x) itereerides kasvab võimalik arv lõikepunkte ning r kasvades reaaliseerub suurem arv võimalikest lõikepunktidest.", correct: true },
         ]
     },
     {
         question: "Mis on kompleks arv?",
         answers: [
-            { text: "1", correct: "" },
-            { text: "1", correct: true },
-            { text: "1", correct: "" },
-            { text: "1", correct: "" }
+            { text: "Need on nelja liikmega arvud mille puhul i² = j² = k² = ijk = −1.", correct: "" },
+            { text: "vektorilaadne arv nii et kahe kompleks arvu korrutamisel suurused liidetakse, nurgad korrutatakse.", correct: "" },
+            { text: "Kompleksarvud on algebraaliste arvude laiendus, mis teeb nii et iga cauchy jada piirväärtus on selles hulgas.", correct: "" },
+            { text: "Arvud kujul a + i*b, kus i = sqrt(-1)", correct: "true" }
         ]
     },
     {
         question: "Kuidas nad töötavad",
         answers: [
-            { text: "1", correct: "" },
-            { text: "1", correct: true },
-            { text: "1", correct: "" },
-            { text: "1", correct: "" }
+            { text: "Korrutades kahte kompleksarvu korrutatakse suurused ja liidetakse nurgad. Kompleksarvu suurus on võrdne kompleksarvu ja kompleksarvu konjugaadi korrutise ruutjuurega.", correct: true },
+            { text: "Korrutades kahte kompleksarvu suurused ja koosinus nende omavahelisest nurgast. Kompleksarvu suurus on võrdne kompleks arvu reaalosa ja imaginatuurosa ruutude summa ruutjuurega.", correct: "" },
+            { text: "Korrutades kahte kompleksarvu korrutatakse suurused ja korrutise nurk on võrdne kahe teguri suurema nurgaga. Kompleksarvu suurus on võrdne kompleksarvu ja kompleksarvu konjugaadi korrutise ruutjuurega.", correct: "" },
+            { text: "Korrutades kahte kompleksarvu suurused korrutatakse mod(n) kus n on kompleksarude numbrite summa ja nurgad liidetakse.", correct: "" }
         ]
     },
     {
-        question: "change of variables",
+        question: "Miks on funktsioonid rx(1-x) ja x^2+c sarnased?",
         answers: [
-            { text: "1", correct: "" },
-            { text: "1", correct: true },
-            { text: "1", correct: "" },
-            { text: "1", correct: "" }
+            { text: "Kuna mõlema suurim polinoomi muutja aste on 2.", correct: "" },
+            { text: "Kuna mõlemal on 2 muutujat.", correct: "" },
+            { text: "Kuna üks on teise lineaarne teisendus.", correct: true }
         ]
     },
     {
-        question: "mandlebrot set I",
+        question: "Mis on suurim väärtus, mis saab olla mandlebrot hulga elemendi suurus?",
         answers: [
             { text: "1", correct: "" },
-            { text: "1", correct: true },
-            { text: "1", correct: "" },
-            { text: "1", correct: "" }
+            { text: "2", correct: true },
+            { text: "0.5", correct: "" },
+            { text: "4", correct: "" }
         ]
     },
     {
-        question: "mandlebrot set II",
+        question: "Mis on suurim puhtreaalarvuline väärtus mandlebrot hulgas?",
         answers: [
-            { text: "1", correct: "" },
-            { text: "1", correct: true },
+            { text: "0", correct: "" },
+            { text: "0.25", correct: true },
+            { text: "0.5", correct: "" },
             { text: "1", correct: "" }
         ]
     }
@@ -97,15 +94,15 @@ const questions = [
 //siin on lisainfo võimalus. 
 //esimene lahter on 1 kui on tegu pildiga ja 0 kui tekstiga
 //teine lahter on vastavalt kas allikas või tekst
-//kolmas on info kasti kaugus vasakust seinast pikslites
+//kolmas on info kasti kaugus vasakust seinast
 //neljas on kaugus põhjast
-//viies on laius protsentides
-//kuues on pikkus protsentides (tekstil ei ole pikkust)
+//viies on laius 
+//kuues on pikkus
 const Data = [
-    [],
-    [[1, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDwaUd677T_vbYjoh0Ks7enDDSZGWcEiHhrA&s", "10vw", "20vh", "20vw", "23vh"], [0, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "1vw", "70vh", "25vw"],[1, "https://media.timeout.com/images/106006274/image.jpg", "66vw", "45vh", "23vw", "33vh"]],
-    [],
-    [],
+    [[0, "Selles viktoriinis on enamasti kõik vastused puudulikud, ebamäärased või lihtsalt valed, teie ülesanne on lugeda autori mõtteid ja valida vastus, mis oli autori arvates kõige õigem antud vastustest.", "0.5vw", "63vh", "26vw"],[0, "Mõnes mõttes see on nagu tavaline kool/test, lihtalt autor on rumalam/ebaprofessionaalsem kui õpetaja.", "0.5vw", "48vh", "26vw"]],
+    [[1, "https://github.com/Kent-Clark-Valge/TU-stuff/blob/main/Screenshot%202025-11-04%20110135.png?raw=true", "0.5vw", "35vh", "24vw", "60vh"], [0, "Roheline graafik on funktsioon y=(1+x)/(2-x), sinine joon on y=x, kiire algväärtus on 3", "0.5vw", "24vh", "26vw"]],
+    [[1,"https://github.com/Kent-Clark-Valge/TU-stuff/blob/main/Screenshot%202025-11-04%20114009.png?raw=true","0.5vw","27.5vh","24vw","60vh  "],[0, "Roheline graafik on funktsioon y=2x(1-x), sinine joon on y=x", "0.5vw", "16.5vh", "26vw"]],
+    [[1, "https://www.vanderbilt.edu/AnS/psychology/cogsci/chaos/workshop/Fig2.9.GIF", "0.5vw", "60.2vh", "24vw", "24vh"], [1,"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJR2WOkupOk2kmTC8bSkz0HjjlO3UH4uyvNg&s","0.5vw", "31.5vh", "24vw", "24vh"],[0, "Funktsiooni rx(1-x) bifurkatsiooni diagramm vastavalt määramispiirkondades [0,4] ja [2.4,4]","0.5vw", "17.3vh", "26vw"]],
     [],
     [],
     [],
@@ -128,7 +125,7 @@ let currentQuestionIndex = 0;
 
 //Käivitab viktoriini uuesti
 function startQuiz() {
-    currentQuestionIndex = 0;
+    currentQuestionIndex = 4;
  
     // muudab klasse nii et küsimusi oleks näha ja tulemust mitte
     endElement.classList.add("hidden");
