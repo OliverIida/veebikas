@@ -120,6 +120,7 @@ const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answerButtons");
 const quizElement = document.getElementById("quiz");
 const endElement = document.getElementById("end");
+const nextButtonElement = document.getElementById("järgmine");
 
 // muutuja, mis hoiab meeles mitmenda küsimuse juures oleme
 let currentQuestionIndex = 0;
@@ -147,6 +148,9 @@ function showQuestion() {
     //${} on muutuja, mis tehakse stringiks 
     //see on kujul "number. küsimus"
     questionElement.innerHTML = `${currentQuestionIndex + 1}. ${currentQuestion.question}`;
+    
+    // Keela "Järgmine" nupp kuni kasutaja valib vastuse
+    nextButtonElement.disabled = true;
 
     
     let currentData = Data[currentQuestionIndex]
@@ -244,6 +248,9 @@ function selectAnswer(event) {
         button.disabled = true; //"invaliidistab" (disables) nupu et seda ei saaks teist korda vajutada
         
     });
+    
+    // Luba "Järgmine" nupp pärast vastuse valimist
+    nextButtonElement.disabled = false;
 }
 
 
